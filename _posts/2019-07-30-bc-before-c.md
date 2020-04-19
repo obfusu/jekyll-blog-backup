@@ -7,8 +7,6 @@ tags:
 modified_time: '2019-07-31T14:44:14.730+05:30'
 ---
 
-Before going to C, lets see why programming languages were invented.
-
 Computers are the most dumbest thing in this world. They understand only 2 terms - 0 or 1, and this language is called as binary.
 
 The very first programs were exactly written in this language. For example to add 2 numbers, the program would look like this.

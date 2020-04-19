@@ -1,16 +1,18 @@
 ---
 layout: post
-title: Boot your own OS
+title: OS Dev - Hello World
 ---
 
-This post is a tutorial to understand the internals of booting, and to boot our own piece of code.
+This post is a tutorial to understand the internals of booting and to boot our own piece of code.
 
-The code we are going to boot is very simple.
+We would be using [Netwide Assembler](https://www.nasm.us) for writing our very own noobest OS.
+
+The code for OS we are going to boot is very simple.
 ```nasm
 jmp $
 ```
 
-jmp $ is the simplest OS anyone can write. This instruction instructs the CPU to jump back to the same instruction, effectively making it an infinite loop.
+jmp $ is the simplest OS anyone can write. This does nothing. jmp $ instructs the CPU to jump back to the same instruction, effectively making it an infinite loop.
 
 $ is a special token in nasm that refers to the address at the beginning of the line. So the above code is effectively same as:
 ```nasm

@@ -1,0 +1,19 @@
+.visible-sm {
+  display: none;
+}
+
+.visible-lg {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .visible-sm {
+    display: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .visible-lg {
+    display: initial;
+  }
+}

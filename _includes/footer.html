@@ -1,8 +1,7 @@
 <footer>
-  <span>Created with &hearts; using <a href="https://github.com/tocttou/hacker-blog">hacker-blog</a></span> |
-    <span>
-       <b>{{ site.owner}}</b>
-    </span>
-    {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
-    <span>© {{ currentyear }}</span>
+  <span>Made with &hearts; using <a href="https://github.com/tocttou/hacker-blog">hacker-blog</a></span>
+  <br class="visible-sm">
+  <span class="visible-lg"> | </span>
+  {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %}
+  <span style="display: block"> &copy; {{ site.owner}} {{ currentyear }} </span>
 </footer>
