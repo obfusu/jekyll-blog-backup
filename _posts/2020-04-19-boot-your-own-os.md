@@ -56,7 +56,7 @@ it will be different according to that processor.
 
 ### Step 2
 The BIOS code is fetched and executed. BIOS will initialize the hardware, and will start looking for valid MBR in the order of boot device priority.
-A valid MBR is marked by the two magic bytes ```AA``` ```55``` at its end.
+A valid MBR is marked by the two magic bytes ```55``` ```AA``` at its end.
 
 ### Step 3
 Once a valid MBR is found, the BIOS copies the MBR (512 bytes) into address ```0x7C00h``` and then transfers execution to this address.
