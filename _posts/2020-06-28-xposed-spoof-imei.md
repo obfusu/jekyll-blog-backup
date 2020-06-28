@@ -19,18 +19,18 @@ You can read more about from below
 
 <br>
 
-### Installing
+### Installing Xposed
 The recommended way is to install magisk (root), and follow instructions on EdXposed page.
 There is a way to use this without root, but I have not tried it yet.
 
 <strong style="color:red">!! DISCLAIMER !!</strong> <br>
-Both rooting and using xposed can be dangerous if you don't know what you are doing. Spoofing IMEI can also break many apps as many apps unnecessarily collect and use this to uniquely identify you without your knowledge. I'm not responsible for anything.
+Both rooting and using xposed can be dangerous if you don't know what you are doing. Spoofing IMEI can also break many apps as they unnecessarily collect and use this to uniquely identify you without your knowledge. I'm not responsible for anything.
 
 <br>
 
 ### Getting started
 
-This tutorial is for the impatient ones, and we will be focussing on getting up to speed without explaining in detail why something is done. If you are looking for more explanations, you can checkout [this excellent tutorial](https://github.com/rovo89/XposedBridge/wiki/Development-tutorial) by rovo89, the original author of Xposed.
+This tutorial is for the impatient ones, and we will be focussing on getting up to speed without explaining in detail why something is done. If you are looking a detailed one, you can checkout [this excellent tutorial](https://github.com/rovo89/XposedBridge/wiki/Development-tutorial) by rovo89, the original author of Xposed.
 
 Prerequisites:
 1. Phone with EdXposed already installed
@@ -103,7 +103,15 @@ provided 'de.robv.android.xposed:api:82'
     }
     ```
 
-10. Build the project and we are done. The output apk will be at app->build->outputs->apk folder.
+10. Open your project dir in file explorer. Goto app->src->main
+11. Create a folder called `assets` and inside it create a file called `xposed_init`.
+12. Add your class name inside this file.
+```
+com.sample.spoofer.ImeiSpoofer
+```
+13. Go back to android studio and build the project.
+
+We are done. The output apk will be at app->build->outputs->apk folder.
 
 <br>
 ### Brief Explanation of the code
@@ -114,7 +122,7 @@ While loading package, we use `findAndHookMethod` function to find a specific fu
 
 Here we have attached hooks to `getImei` function of `android.telephony.TelephonyManager` class which is used for getting IMEI.
 
-We have implemented `beforeHookedMethod`. So our code will be called before actual getImei call of TelephonyManager. We use `param.setResult()` to send our spoofed result and the original return value of getImei won't matter. We can also use `XC_MethodReplacement` instead of `XC_MethodHook` as we just want to replace the function.
+We have implemented `beforeHookedMethod`. So our code will be called before actual getImei call of TelephonyManager. We use `param.setResult()` to send our spoofed result and thus the original return value of getImei won't matter. We can also use `XC_MethodReplacement` instead of `XC_MethodHook` as we just want to replace the function.
 
 Detailed API info of Xposed framework can be found [here](https://api.xposed.info/reference/packages.html)
 
