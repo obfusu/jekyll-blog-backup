@@ -1,9 +1,9 @@
 title: The Obfuscation
 description: "Personal Blog"
 author:
-  name: "77ganesh"
+  name: "obfusu"
   email: "77ganesh.nitt@gmail.com"
-  url: "https://77ganesh.github.io/"
+  url: "https://obfusu.github.io/"
 
 baseurl: /
 
@@ -29,4 +29,4 @@ plugins:
 
 # Custom variables
 owner : "Ganesh Sundar C"
-year : "2020"
+year : "2021"
